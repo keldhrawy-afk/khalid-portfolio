@@ -1,0 +1,18 @@
+:lang(ar),
+[dir="rtl"] {
+  font-family: "IBM Plex Sans Arabic", Manrope, Arial, sans-serif;
+}
+
+:lang(ar).mono,
+[dir="rtl"].mono {
+  font-family: "IBM Plex Sans Arabic", Arial, sans-serif;
+  letter-spacing: 0;
+}
+
+:lang(ar):is(h1, h2, h3),
+[dir="rtl"] :is(h1, h2, h3) {
+  font-family: "IBM Plex Sans Arabic", Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.12;
+}
