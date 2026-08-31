@@ -42,7 +42,7 @@
     issuerHub = document.createElement('div');
     issuerHub.className = 'issuer-hub';
     issuerHub.setAttribute('aria-label', 'Choose an issuer to verify credentials');
-    issuerHub.innerHTML = `<div class="issuer-hub-copy"><span>/ VERIFY BY ISSUER</span><p>Choose a logo, then open the original credential.</p></div><div class="issuer-tiles"><button class="issuer-tile is-active" type="button" data-issuer="all" aria-pressed="true"><b>ALL</b><small>17</small></button>${issuerInfo.map((issuer) => `<button class="issuer-tile" type="button" data-issuer="${issuer.id}" aria-pressed="false"><img src="${issuer.logo}" alt="${issuer.label}"><small>${String(Object.keys(credentialUrls).filter((key) => key.startsWith(`${issuer.id}::`)).length).padStart(2, '0')}</small></button>`).join('')}</div>`;
+    issuerHub.innerHTML = `<div class="issuer-hub-copy"><span>/ VERIFY BY ISSUER</span><p>Choose a logo, then open the original credential.</p></div><div class="issuer-tiles">${issuerInfo.map((issuer) => `<button class="issuer-tile" type="button" data-issuer="${issuer.id}" aria-pressed="false"><img src="${issuer.logo}" alt="${issuer.label}"><small>${String(Object.keys(credentialUrls).filter((key) => key.startsWith(`${issuer.id}::`)).length).padStart(2, '0')}</small></button>`).join('')}</div>`;
     grid.before(issuerHub);
     issuerPanel = document.createElement('div');
     issuerPanel.className = 'issuer-panel';
@@ -130,7 +130,6 @@
         item.classList.toggle('is-active', active);
         item.setAttribute('aria-pressed', String(active));
       });
-      if (issuer === 'all') { issuerPanel.hidden = true; issuerPanel.replaceChildren(); return; }
       const items = credentials.filter((credential) => credential.issuer === issuer && credential.url);
       issuerPanel.hidden = false;
       issuerPanel.innerHTML = `<div class="issuer-panel-heading"><span>/ ORIGINAL CREDENTIALS</span><b>${tile.querySelector('img')?.alt || issuer}</b></div><div class="issuer-panel-list">${items.map((credential) => `<a href="${credential.url}" target="_blank" rel="noopener"><span>${credential.title}</span><small>${credential.issued} &nbsp; / &nbsp; OPEN ORIGINAL ↗</small></a>`).join('')}</div>`;
