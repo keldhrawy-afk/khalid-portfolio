@@ -122,6 +122,8 @@
     });
   });
 
+  grid?.remove();
+
   issuerHub?.querySelectorAll('.issuer-tile').forEach((tile) => {
     tile.addEventListener('click', () => {
       const issuer = tile.dataset.issuer;
