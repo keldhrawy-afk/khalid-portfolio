@@ -1,9 +1,9 @@
 .hero-visual { background: #090909; }
 .hero-portrait { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 68% center; filter: grayscale(1) contrast(1.08); }
 .hero-poster { object-position: center 62%; filter: none; }
-.hero-floating { background: #050505; border-left: 0; overflow: hidden; isolation: isolate; }
+.hero-floating { background: transparent; border-left: 0; overflow: hidden; isolation: isolate; margin-left: 0; }
 .hero-cutout { z-index: 1; width: 129%; height: 129%; right: -26%; left: auto; top: auto; bottom: -16%; object-fit: contain; object-position: right bottom; filter: none; transform: none; transform-origin: right bottom; mask-image: linear-gradient(to bottom, #000 0 76%, transparent 100%); }
-.hero-editorial { z-index: 1; object-fit: contain; object-position: center bottom; filter: none; }
+.hero-editorial { z-index: 1; object-fit: cover; object-position: center 68%; filter: none; mix-blend-mode: screen; transform: scale(1.1); transform-origin: center; }
 .hero-platforms { position: absolute; z-index: 3; right: 4%; top: 50%; transform: translateY(-50%); display: grid; gap: 11px; width: 100px; color: rgba(245,245,245,.72); font-size: 8px; }
 .hero-platforms > span { display: flex; align-items: center; gap: 8px; padding: 0; }
 .hero-platforms > span:first-child { color: var(--yellow); font-size: 7px; letter-spacing: .13em; margin-bottom: 2px; }
@@ -13,6 +13,7 @@
 .about-stamp { z-index: 2; }
 
 @media (max-width: 760px) {
+  .hero-editorial { object-fit: contain; object-position: center bottom; mix-blend-mode: normal; transform: none; }
   .hero-cutout { width: 128%; height: 128%; right: -28%; bottom: -16%; }
   .hero-platforms { right: 4%; top: 49%; width: 96px; gap: 6px; }
 }
