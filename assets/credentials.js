@@ -1,8 +1,12 @@
 (() => {
   const logoUrls = {
-    hp: 'https://cdn.simpleicons.org/hp/0096D6',
-    meta: 'https://cdn.simpleicons.org/meta/0866FF',
-    li: 'https://cdn.simpleicons.org/linkedin/0A66C2'
+    hp: 'assets/images/credential-logos/hp-life.png',
+    meta: 'assets/images/credential-logos/meta.png',
+    li: 'assets/images/credential-logos/linkedin-learning.png',
+    yanfaa: 'assets/images/credential-logos/yanfaa.png',
+    uol: 'assets/images/credential-logos/university-of-london.png',
+    ucd: 'assets/images/credential-logos/uc-davis.png',
+    seif: 'assets/images/credential-logos/seif-elshennawy.png'
   };
 
   document.querySelectorAll('.credential-card').forEach((card) => {
@@ -13,7 +17,10 @@
     if (!mark || !issuer || !title || !issued) return;
 
     const logo = logoUrls[[...mark.classList].find((name) => logoUrls[name])];
-    if (logo) mark.innerHTML = `<img src="${logo}" alt="${issuer.textContent.trim()} logo" loading="lazy">`;
+    if (logo) {
+      mark.classList.add('has-logo');
+      mark.innerHTML = `<img src="${logo}" alt="${issuer.textContent.trim()} logo" loading="lazy">`;
+    }
 
     const front = document.createElement('div');
     front.className = 'credential-face credential-front';
