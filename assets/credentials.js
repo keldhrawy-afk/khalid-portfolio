@@ -25,6 +25,23 @@
     'UNIVERSITY OF CALIFORNIA, DAVIS::Introduction to Google SEO': 'https://coursera.org/share/08aab5527283cd2ef08160cf58c830d3',
     'META::Introduction to Social Media Marketing': 'https://coursera.org/share/8c78b9ffb3f29b6dffd54bafa920da63'
   };
+  const issuerInfo = [
+    { id: 'HP LIFE', label: 'HP LIFE', logo: logoUrls.hp },
+    { id: 'YANFAA.COM', label: 'YANFAA', logo: logoUrls.yanfaa },
+    { id: 'LINKEDIN LEARNING', label: 'LINKEDIN', logo: logoUrls.li },
+    { id: 'META', label: 'META', logo: logoUrls.meta },
+    { id: 'UNIVERSITY OF LONDON', label: 'U. LONDON', logo: logoUrls.uol },
+    { id: 'UNIVERSITY OF CALIFORNIA, DAVIS', label: 'UC DAVIS', logo: logoUrls.ucd }
+  ];
+  const grid = document.querySelector('.credential-grid');
+  let issuerHub;
+  if (grid) {
+    issuerHub = document.createElement('div');
+    issuerHub.className = 'issuer-hub';
+    issuerHub.setAttribute('aria-label', 'Filter credentials by issuer');
+    issuerHub.innerHTML = `<div class="issuer-hub-copy"><span>/ VERIFY BY ISSUER</span><p>Choose a logo to view its verified credentials.</p></div><div class="issuer-tiles"><button class="issuer-tile is-active" type="button" data-issuer="all" aria-pressed="true"><b>ALL</b><small>17</small></button>${issuerInfo.map((issuer) => `<button class="issuer-tile" type="button" data-issuer="${issuer.id}" aria-pressed="false"><img src="${issuer.logo}" alt="${issuer.label}"><small>${String(Object.keys(credentialUrls).filter((key) => key.startsWith(`${issuer.id}::`)).length).padStart(2, '0')}</small></button>`).join('')}</div>`;
+    grid.before(issuerHub);
+  }
 
   document.querySelectorAll('.credential-card').forEach((card) => {
     const mark = card.querySelector('.credential-mark');
@@ -34,7 +51,9 @@
     if (!mark || !issuer || !title || !issued) return;
 
     const logo = logoUrls[[...mark.classList].find((name) => logoUrls[name])];
-    const credentialUrl = credentialUrls[`${issuer.textContent.trim()}::${title.textContent.trim()}`];
+    const issuerName = issuer.textContent.trim();
+    card.dataset.issuer = issuerName;
+    const credentialUrl = credentialUrls[`${issuerName}::${title.textContent.trim()}`];
     if (logo) {
       mark.classList.add('has-logo');
       mark.innerHTML = `<img src="${logo}" alt="${issuer.textContent.trim()} logo" loading="lazy">`;
@@ -96,6 +115,20 @@
     card.addEventListener('click', (event) => { if (!event.target.closest('a')) toggle(); });
     card.addEventListener('keydown', (event) => {
       if (!event.target.closest('a') && (event.key === 'Enter' || event.key === ' ')) { event.preventDefault(); toggle(); }
+    });
+  });
+
+  issuerHub?.querySelectorAll('.issuer-tile').forEach((tile) => {
+    tile.addEventListener('click', () => {
+      const issuer = tile.dataset.issuer;
+      issuerHub.querySelectorAll('.issuer-tile').forEach((item) => {
+        const active = item === tile;
+        item.classList.toggle('is-active', active);
+        item.setAttribute('aria-pressed', String(active));
+      });
+      document.querySelectorAll('.credential-card').forEach((card) => {
+        card.hidden = issuer !== 'all' && card.dataset.issuer !== issuer;
+      });
     });
   });
 })();
