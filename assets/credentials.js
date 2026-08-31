@@ -11,6 +11,7 @@
   const credentialUrls = {
     'HP LIFE::Target Audience': 'https://www.life-global.org/certificate/fdd82df2-0b8e-4d53-b178-32d25dc62859',
     'HP LIFE::Unique Value Proposition': 'https://www.life-global.org/certificate/12715c36-dc8a-4951-b659-22024b20c9dc',
+    'SEIFELSHENNawy::Content Marketing': 'https://seifelshennawy.com/certificates/content-marketing/?course_id=5211&cert-nonce=bf624be3e5',
     'YANFAA.COM::E-Store Management': 'https://yanfaa.s3.eu-west-1.amazonaws.com/certificates/4358e40b-b085-4e8f-92c4-b14178f7b6a6.pdf',
     'LINKEDIN LEARNING::SEO Foundations': 'https://www.linkedin.com/learning/certificates/f87365f6ac13d38cbb502ce25293ec2ff6a7be49c98b4937ec2d4c2114172429/',
     'LINKEDIN LEARNING::Social Media Video Strategy': 'https://www.linkedin.com/learning/certificates/d9ac43ed753a853b4c233136529188f6201a8485191f1e59eae13f04c1cc93b9/',
@@ -35,12 +36,18 @@
   ];
   const grid = document.querySelector('.credential-grid');
   let issuerHub;
+  let issuerPanel;
+  const credentials = [];
   if (grid) {
     issuerHub = document.createElement('div');
     issuerHub.className = 'issuer-hub';
-    issuerHub.setAttribute('aria-label', 'Filter credentials by issuer');
-    issuerHub.innerHTML = `<div class="issuer-hub-copy"><span>/ VERIFY BY ISSUER</span><p>Choose a logo to view its verified credentials.</p></div><div class="issuer-tiles"><button class="issuer-tile is-active" type="button" data-issuer="all" aria-pressed="true"><b>ALL</b><small>17</small></button>${issuerInfo.map((issuer) => `<button class="issuer-tile" type="button" data-issuer="${issuer.id}" aria-pressed="false"><img src="${issuer.logo}" alt="${issuer.label}"><small>${String(Object.keys(credentialUrls).filter((key) => key.startsWith(`${issuer.id}::`)).length).padStart(2, '0')}</small></button>`).join('')}</div>`;
+    issuerHub.setAttribute('aria-label', 'Choose an issuer to verify credentials');
+    issuerHub.innerHTML = `<div class="issuer-hub-copy"><span>/ VERIFY BY ISSUER</span><p>Choose a logo, then open the original credential.</p></div><div class="issuer-tiles"><button class="issuer-tile is-active" type="button" data-issuer="all" aria-pressed="true"><b>ALL</b><small>17</small></button>${issuerInfo.map((issuer) => `<button class="issuer-tile" type="button" data-issuer="${issuer.id}" aria-pressed="false"><img src="${issuer.logo}" alt="${issuer.label}"><small>${String(Object.keys(credentialUrls).filter((key) => key.startsWith(`${issuer.id}::`)).length).padStart(2, '0')}</small></button>`).join('')}</div>`;
     grid.before(issuerHub);
+    issuerPanel = document.createElement('div');
+    issuerPanel.className = 'issuer-panel';
+    issuerPanel.hidden = true;
+    issuerHub.after(issuerPanel);
   }
 
   document.querySelectorAll('.credential-card').forEach((card) => {
@@ -54,6 +61,7 @@
     const issuerName = issuer.textContent.trim();
     card.dataset.issuer = issuerName;
     const credentialUrl = credentialUrls[`${issuerName}::${title.textContent.trim()}`];
+    credentials.push({ issuer: issuerName, title: title.textContent.trim(), issued: issued.textContent.trim(), url: credentialUrl });
     if (logo) {
       mark.classList.add('has-logo');
       mark.innerHTML = `<img src="${logo}" alt="${issuer.textContent.trim()} logo" loading="lazy">`;
@@ -105,16 +113,12 @@
     inner.append(front, back);
     card.replaceChildren(inner);
     card.tabIndex = 0;
-    card.setAttribute('role', 'button');
-    card.setAttribute('aria-label', `View ${title.textContent.trim()} credential`);
-    card.setAttribute('aria-pressed', 'false');
-    const toggle = () => {
-      const flipped = card.classList.toggle('is-flipped');
-      card.setAttribute('aria-pressed', String(flipped));
-    };
-    card.addEventListener('click', (event) => { if (!event.target.closest('a')) toggle(); });
+    card.setAttribute('role', credentialUrl ? 'link' : 'group');
+    card.setAttribute('aria-label', credentialUrl ? `Open original ${title.textContent.trim()} credential` : `${title.textContent.trim()} credential`);
+    if (credentialUrl) card.classList.add('has-direct-link');
+    card.addEventListener('click', (event) => { if (credentialUrl && !event.target.closest('a')) window.open(credentialUrl, '_blank', 'noopener'); });
     card.addEventListener('keydown', (event) => {
-      if (!event.target.closest('a') && (event.key === 'Enter' || event.key === ' ')) { event.preventDefault(); toggle(); }
+      if (credentialUrl && !event.target.closest('a') && (event.key === 'Enter' || event.key === ' ')) { event.preventDefault(); window.open(credentialUrl, '_blank', 'noopener'); }
     });
   });
 
@@ -126,9 +130,10 @@
         item.classList.toggle('is-active', active);
         item.setAttribute('aria-pressed', String(active));
       });
-      document.querySelectorAll('.credential-card').forEach((card) => {
-        card.hidden = issuer !== 'all' && card.dataset.issuer !== issuer;
-      });
+      if (issuer === 'all') { issuerPanel.hidden = true; issuerPanel.replaceChildren(); return; }
+      const items = credentials.filter((credential) => credential.issuer === issuer && credential.url);
+      issuerPanel.hidden = false;
+      issuerPanel.innerHTML = `<div class="issuer-panel-heading"><span>/ ORIGINAL CREDENTIALS</span><b>${tile.querySelector('img')?.alt || issuer}</b></div><div class="issuer-panel-list">${items.map((credential) => `<a href="${credential.url}" target="_blank" rel="noopener"><span>${credential.title}</span><small>${credential.issued} &nbsp; / &nbsp; OPEN ORIGINAL ↗</small></a>`).join('')}</div>`;
     });
   });
 })();
