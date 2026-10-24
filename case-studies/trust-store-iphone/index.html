@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Trust Store iPhone Engine Case Study | Khalid Eldhrawy</title>
+  <meta name="description" content="A high-ticket smartphone acquisition engine case study for Trust Store by Khalid Eldhrawy: creative angles, 99.1% Greater Cairo geo-fencing, messaging & calls pipeline, and verified daily sales velocity." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #050505;
+      --panel: #101010;
+      --panel-hover: #161616;
+      --yellow: #ffd400;
+      --white: #f4f4f1;
+      --muted: #a6a6a6;
+      --line: #262626;
+      --arabic: 'IBM Plex Sans Arabic', Arial, sans-serif;
+      --mono: 'IBM Plex Mono', monospace;
+      --display: 'Bebas Neue', Impact, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--arabic);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      width: min(1240px, calc(100% - 48px));
+      margin: auto;
+    }
+
+    .index, .label, .source, .live-state {
+      font: 500 11px/1.4 var(--mono);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      direction: ltr;
+    }
+    .label { color: var(--yellow); }
+    .index { color: #747474; }
+
+    /* TOP NAV */
+    .top-nav {
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      background: rgba(5,5,5,0.92);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+    .top-nav-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      direction: ltr;
+    }
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .nav-back {
+      color: var(--yellow);
+      text-decoration: none;
+      font: 600 11px var(--mono);
+      letter-spacing: .08em;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: color .2s;
+    }
+    .nav-back:hover { color: #fff; }
+    .nav-pill {
+      font: 600 10px var(--mono);
+      color: #888;
+      border: 1px solid var(--line);
+      padding: 4px 10px;
+      text-decoration: none;
+      transition: all .2s;
+    }
+    .nav-pill:hover {
+      color: var(--yellow);
+      border-color: var(--yellow);
+    }
+    .nav-tag {
+      font: 500 11px var(--mono);
+      color: #666;
+      letter-spacing: .05em;
+    }
+
+    section {
+      padding: clamp(70px, 8vw, 120px) 0;
+      border-top: 1px solid var(--line);
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 {
+      direction: ltr;
+      text-align: left;
+      font-family: var(--display);
+      font-weight: 400;
+      letter-spacing: .01em;
+    }
+
+    h1 {
+      font-size: clamp(4.8rem, 11vw, 10.5rem);
+      line-height: .8;
+      margin: 20px 0;
+      color: #fff;
+    }
+    h2 {
+      font-size: clamp(3.5rem, 7vw, 7.5rem);
+      line-height: .82;
+      margin: 15px 0 30px;
+    }
+
+    .yellow { color: var(--yellow); }
+
+    .live-badge {
+      display: inline-flex;
+      direction: ltr;
+      align-items: center;
+      gap: 9px;
+      background: var(--yellow);
+      color: #000;
+      padding: 8px 14px;
+      font: 600 10px var(--mono);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .live-badge:before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #000;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 850px;
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+      background: radial-gradient(circle at 82% 56%, rgba(255,212,0,.15), transparent 0 22%, transparent 45%), #050505;
+      padding-top: 40px;
+      border-top: none;
+    }
+    .hero:after {
+      content: '';
+      position: absolute;
+      width: 65vw;
+      height: 1px;
+      right: -15vw;
+      bottom: 16%;
+      background: var(--yellow);
+      transform: rotate(-19deg);
+      transform-origin: right;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 7%;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      direction: ltr;
+    }
+    .hero-copy {
+      direction: rtl;
+      text-align: right;
+    }
+    .hero-copy h1 {
+      direction: ltr;
+      text-align: left;
+    }
+    .hero-copy p {
+      max-width: 600px;
+      color: #c9c9c9;
+      font: 400 18px/2 var(--arabic);
+      margin-top: 20px;
+    }
+    .hero-meta {
+      margin-top: 36px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--line);
+      direction: ltr;
+    }
+    .hero-meta div {
+      padding: 15px 12px 0 0;
+      color: #aaa;
+      font: 500 10px/1.6 var(--mono);
+      letter-spacing: .05em;
+    }
+    .hero-meta b {
+      display: block;
+      color: var(--yellow);
+      font-weight: 600;
+    }
+
+    /* VISUAL STACK WITH OFFICIAL LOGO */
+    .visual-stack {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .logo-hero-card {
+      background: #111;
+      border: 1px solid rgba(255,212,0,.8);
+      padding: 38px 44px;
+      position: relative;
+      box-shadow: 20px 22px 0 rgba(255,212,0,.12);
+      text-align: center;
+      width: 100%;
+      max-width: 440px;
+    }
+    .logo-hero-card:before, .logo-hero-card:after {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: var(--yellow);
+    }
+    .logo-hero-card:before { left: -4px; top: -4px; }
+    .logo-hero-card:after { right: -4px; bottom: -4px; }
+
+    .logo-hero-card img {
+      width: 230px;
+      height: auto;
+      display: inline-block;
+      margin-bottom: 22px;
+    }
+    .logo-hero-card .badge-metric {
+      border-top: 1px solid #252525;
+      padding-top: 12px;
+      padding-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      font: 600 11px var(--mono);
+      color: #888;
+      letter-spacing: 0.05em;
+    }
+    .logo-hero-card .badge-metric strong {
+      color: var(--yellow);
+      font-size: 15px;
+    }
+
+    /* OPENING SECTION (YELLOW) */
+    .opening {
+      background: var(--yellow);
+      color: #050505;
+    }
+    .opening-grid {
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 10%;
+      direction: ltr;
+    }
+    .opening h2 {
+      margin: 0;
+      color: #050505;
+    }
+    .arabic-lead {
+      direction: rtl;
+      text-align: right;
+      font: 500 clamp(1.6rem, 2.6vw, 2.6rem)/1.7 var(--arabic);
+      max-width: 720px;
+    }
+    .opening .source {
+      margin-top: 24px;
+      color: #514600;
+    }
+
+    /* STORY SECTION */
+    .story-grid {
+      display: grid;
+      grid-template-columns: .72fr 1.28fr;
+      gap: 10%;
+      direction: ltr;
+    }
+    .story-body {
+      direction: rtl;
+      text-align: right;
+      max-width: 720px;
+      color: #d1d1d1;
+      font: 400 18px/2.1 var(--arabic);
+    }
+    .story-body strong { color: #fff; }
+    
+    .insight-pull {
+      margin: 32px 0;
+      padding: 22px 26px;
+      border-right: 3px solid var(--yellow);
+      background: #111;
+      color: #fff;
+      font: 600 22px/1.8 var(--arabic);
+    }
+
+    /* CAMPAIGN PILLAR HEADERS */
+    .pillar-header {
+      margin: 60px 0 35px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      direction: ltr;
+    }
+    .pillar-header h3 {
+      font-size: clamp(2rem, 3.5vw, 3.5rem);
+      color: #fff;
+      margin: 0;
+    }
+    .pillar-tag {
+      font: 600 11px var(--mono);
+      color: var(--yellow);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    /* EVIDENCE STAGES WITH SCREENSHOTS */
+    .evidence-stage {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 8%;
+      align-items: center;
+      direction: ltr;
+      margin-bottom: 60px;
+      padding: 30px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-left: 3px solid var(--line);
+      transition: border-color .2s;
+    }
+    .evidence-stage:hover {
+      border-left-color: var(--yellow);
+    }
+    .evidence-copy {
+      direction: rtl;
+      text-align: right;
+    }
+    .evidence-copy p {
+      color: #c8c8c8;
+      font: 400 17px/2 var(--arabic);
+    }
+    .evidence-copy h3 {
+      font-size: clamp(2.3rem, 4vw, 4rem);
+      line-height: .88;
+      margin: 15px 0 18px;
+      color: #fff;
+    }
+
+    .detail-shot {
+      position: relative;
+      padding: 10px;
+      background: #000;
+      border: 1px solid #333;
+      border-bottom: 2px solid var(--yellow);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    }
+    .detail-shot img {
+      width: 100%;
+      height: auto;
+      display: block;
+      background: #fff;
+      border-radius: 2px;
+    }
+    .detail-note {
+      margin-top: 10px;
+      font: 500 10px var(--mono);
+      color: var(--yellow);
+      letter-spacing: .06em;
+      direction: ltr;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* RESULTS (YELLOW SECTION) */
+    .results {
+      background: var(--yellow);
+      color: #050505;
+    }
+    .results-top {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 10%;
+      align-items: end;
+      margin-bottom: 50px;
+      direction: ltr;
+    }
+    .results-top h2 {
+      margin: 0;
+      color: #050505;
+    }
+    .results-top p {
+      direction: rtl;
+      text-align: right;
+      font: 500 18px/1.9 var(--arabic);
+      max-width: 600px;
+      color: #1a1a1a;
+    }
+
+    .metric-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 2px solid #050505;
+      border-bottom: 2px solid #050505;
+      direction: ltr;
+    }
+    .metric-strip article {
+      padding: 30px 18px;
+      border-right: 1px solid rgba(0,0,0,0.15);
+    }
+    .metric-strip article:last-child {
+      border-right: none;
+    }
+    .metric-strip b {
+      display: block;
+      font: 400 clamp(3.2rem, 6vw, 6rem)/.8 var(--display);
+      color: #050505;
+    }
+    .metric-strip span {
+      display: block;
+      margin-top: 10px;
+      font: 600 11px var(--mono);
+      letter-spacing: .08em;
+      color: #333;
+      text-transform: uppercase;
+    }
+
+    /* SERIES SWITCHER BOX */
+    .series-switcher {
+      margin-top: 40px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      background: #111;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      direction: rtl;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .series-switcher p {
+      margin: 0;
+      font: 500 14px var(--arabic);
+      color: #aaa;
+    }
+    .series-switcher a {
+      color: #000;
+      background: var(--yellow);
+      text-decoration: none;
+      padding: 10px 18px;
+      font: 600 12px var(--mono);
+      letter-spacing: .06em;
+      transition: background .2s;
+    }
+    .series-switcher a:hover {
+      background: #fff;
+    }
+
+    /* CLOSE SECTION */
+    .close-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 10%;
+      direction: ltr;
+    }
+    .close-grid h2 {
+      color: #fff;
+    }
+    .close-grid p {
+      direction: rtl;
+      text-align: right;
+      font: 400 18px/2 var(--arabic);
+      color: #ccc;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, .opening-grid, .story-grid, .evidence-stage, .results-top, .close-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .hero-meta {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+      .metric-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .pillar-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP NAV -->
+  <nav class="top-nav">
+    <div class="wrap top-nav-wrap">
+      <div class="nav-left">
+        <a href="../../index.html" class="nav-back">← BACK TO PORTFOLIO</a>
+        <a href="../trust-store-calls/" class="nav-pill">VIEW PART 02: RETAIL CALLS ENGINE ↗</a>
+      </div>
+      <span class="nav-tag">TRUST STORE CASE STUDY SERIES / PART 01</span>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      
+      <div class="hero-copy">
+        <span class="live-badge">AUDITED PERFORMANCE CASE STUDY</span>
+        <h1 style="margin-top:20px;">TRUST STORE<br><span class="yellow">IPHONE ENGINE.</span></h1>
+        <p>
+          كيف تحول ميديا باينج الهواتف الذكية في القاهرة والجيزة من مجرد إعلانات أسعار مستهلكة، إلى ماكينة استحواذ يومية تجمع بين الرسائل والاتصالات المباشرة بالفروع لتبيع بمعدل 7 أجهزة آيفون يومياً؟
+        </p>
+        <div class="hero-meta">
+          <div>INDUSTRY<br><b>SMARTPHONES / RETAIL</b></div>
+          <div>MARKET<br><b>CAIRO & GIZA (99.1%)</b></div>
+          <div>VELOCITY<br><b>7 IPHONES / DAY</b></div>
+          <div>CONVERSION<br><b>CHATS & SALES</b></div>
+        </div>
+      </div>
+
+      <!-- VISUAL STACK: OFFICIAL TRUST STORE LOGO -->
+      <div class="visual-stack">
+        <div class="logo-hero-card">
+          <img src="evidence/trust_store_logo_white.png" alt="Trust Store Official Logo">
+          <div class="badge-metric">
+            <span>SALES VELOCITY</span>
+            <strong>7 DEVICES / DAY</strong>
+          </div>
+          <div class="badge-metric">
+            <span>MANAGED AD SPEND</span>
+            <strong>1.37M EGP</strong>
+          </div>
+          <div class="badge-metric">
+            <span>PURCHASE CONVERSATIONS</span>
+            <strong>1,302 CHATS @ 5.33 EGP</strong>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- OPENING TENSION (YELLOW) -->
+  <section class="opening">
+    <div class="wrap opening-grid">
+      <div>
+        <p class="index" style="color:#514600">01 / THE TENSION</p>
+        <h2>THE HIGH-TICKET<br>DILEMMA.</h2>
+      </div>
+      <div>
+        <p class="arabic-lead">
+          الآيفون في السوق المصري مش مجرد موبايل.. هو قرار شراء مالي كبير (25 ألف لـ 65 ألف جنيه وأكثر). العميل قبل ما يدفع محاصر بـ 3 مخاوف: هل الجهاز أصلي وعلبته مقفولة؟ هل الضمان والاستبدال حقيقي؟ وإزاي أدفع المبلغ ده كاش؟
+        </p>
+        <p class="source">THE DECISION / STOP SELLING SPECS. START ELIMINATING BUYER FRICTION.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRATEGY & NARRATIVE -->
+  <section class="story">
+    <div class="wrap story-grid">
+      <div>
+        <p class="label">02 / THE ARCHITECTURE</p>
+        <h2>OMNICHANNEL<br>ACQUISITION<br><span class="yellow">ENGINE.</span></h2>
+      </div>
+      <div class="story-body">
+        <p>
+          بدل حرق الميزانيات على مستوى مصر كلها في محافظات بعيدة لا تغطيها الفروع، تم بناء منظومة استحواذ مرتكزة على محورين:
+        </p>
+        <p>
+          <strong>1. العزل الجغرافي الصارم (99.1% القاهرة والجيزة):</strong>  
+          تم توجيه أكثر من 1.35M جنيه للقاهرة والجيزة تحديداً، لضمان أن كل مليم يصرف على عميل لديه القدرة الجغرافية على زيارة فروع الستور في نفس اليوم أو الاستلام الفوري مع المعاينة.
+        </p>
+        <div class="insight-pull">
+          "في بيع السلع باهظة الثمن.. المحادثة المكتوبة تقنع المتردد، لكن المكالمة الهاتفية تحسم زيارة الفرع والشراء الفوري في نفس اليوم."
+        </div>
+        <p>
+          <strong>2. خط الأنابيب المزدوج (Messaging + Direct Calls):</strong>  
+          العملاء نوعان: نوع يفضل الاستفسار عن برامج التقسيط (ta2sit) والأسعار عبر الشات (Messaging Pipeline)، ونوع عالي الجدية (High-Intent) يريد التأكد من توافر الموديل واللون في الفرع فوراً عبر مكالمة مباشرة (Calls Pipeline). بنينا حملات مخصصة لكل مسار!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVIDENCE WALL WITH ALL CROPPED SCREENSHOTS -->
+  <section class="evidence">
+    <div class="wrap">
+      
+      <p class="label">03 / VERIFIED CAMPAIGN EVIDENCE</p>
+      <h2 style="margin-bottom:30px;">UNDENIABLE<br><span class="yellow">PROOF.</span></h2>
+
+      <!-- ================= PILLAR 1: MESSAGING ENGINE ================= -->
+      <div class="pillar-header">
+        <div>
+          <span class="pillar-tag">CAMPAIGN 01 · CAMP 27/7 MSG FB</span>
+          <h3>THE MESSAGING & ATTENTION ENGINE</h3>
+        </div>
+        <span class="index">SALES OBJECTIVE · META ADS MANAGER</span>
+      </div>
+
+      <!-- STAGE 01: VIDEO PLAYS -->
+      <div class="evidence-stage">
+        <div class="evidence-copy">
+          <p class="label">STAGE 01 / ATTENTION HOOK</p>
+          <h3>82,931 VIDEO PLAYS.<br><span class="yellow">0.35 EGP / HOOK.</span></h3>
+          <p>
+            بدأنا بفيديوهات واقعية من داخل فروع الستور تستعرض الأجهزة وحالتها الأصلية مع زاوية التقسيط المريح. النتيجة كانت إيقاف السكرول وتحقيق 82,931 مشاهدة فيديو، مع وصول 3,861 مشتري جاد لمشاهدة أكثر من 75% من الفيديو بهدف الـ Sales.
+          </p>
+        </div>
+        <div class="detail-shot">
+          <img src="evidence/evidence_video_sales.png" alt="Meta Ads Video Plays Evidence">
+          <div class="detail-note">
+            <span>SOURCE: META ADS MANAGER</span>
+            <span>OBJECTIVE: SALES · 20,115 HOOK PLAYS · 3,861 @ 75%+</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- STAGE 02: CLICKS & CPC -->
+      <div class="evidence-stage">
+        <div class="evidence-copy">
+          <p class="label">STAGE 02 / TRAFFIC VELOCITY</p>
+          <h3>3,073 LINK CLICKS.<br><span class="yellow">2.26 EGP CPC.</span></h3>
+          <p>
+            تحويل المشاهدة إلى زيارة مباشرة لكتالوج الويب سايت وفروع القاهرة والجيزة. تم تسجيل 3,073 نقرة رابط مباشرة بتكلفة 2.26 جنيه، وإجمالي 6,107 نقرة بتكلفة 1.14 جنيه فقط، مع نسبة نقر (CTR All) بلغت 5.74% لسلعة آيفون عالية السعر.
+          </p>
+        </div>
+        <div class="detail-shot">
+          <img src="evidence/evidence_cpc_ctr.png" alt="Meta Ads CPC & CTR Evidence">
+          <div class="detail-note">
+            <span>SOURCE: META ADS MANAGER</span>
+            <span>CTR (ALL): 5.74% · CPC (ALL): 1.14 EGP · LINK CPC: 2.26 EGP</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- STAGE 03: CONVERSATIONS -->
+      <div class="evidence-stage">
+        <div class="evidence-copy">
+          <p class="label">STAGE 03 / CONVERSION PIPELINE</p>
+          <h3>1,302 CONVERSATIONS.<br><span class="yellow">5.33 EGP / CHAT.</span></h3>
+          <p>
+            توليد 1,302 محادثة شراء مباشرة بتكلفة 5.33 جنيه فقط للرسالة بميزانية 6,946 جنيه، مما أتاح لفريق المبيعات إغلاق الصفقات والإجابة على خطط التقسيط وتحقيق وتيرة مبيعات يومية مستمرة.
+          </p>
+        </div>
+        <div class="detail-shot">
+          <img src="evidence/evidence_conversations.png" alt="Meta Ads Conversations Evidence">
+          <div class="detail-note">
+            <span>SOURCE: META ADS MANAGER</span>
+            <span>1,302 MESSAGING CONVERSATIONS · 65,104 REACH · 5.33 EGP CPA</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- RESULTS SECTION (YELLOW) -->
+  <section class="results">
+    <div class="wrap">
+      <div class="results-top">
+        <div>
+          <p class="index" style="color:#514600">04 / THE AGGREGATE RESULTS</p>
+          <h2>THE VELOCITY<br>WAS REAL.</h2>
+        </div>
+        <p>
+          الدمج بين حصر النطاق الجغرافي في القاهرة والجيزة (99.1%)، ومسارات المحادثات المكتوبة لخطط التقسيط، ومسارات الاتصال الهاتفي المباشر بالفرع، خلق وتيرة تجارية مستقرة حققت 7 أجهزة آيفون مبيعات يومية على مدار 8 شهور متواصلة.
+        </p>
+      </div>
+
+      <div class="metric-strip">
+        <article>
+          <b>7 / DAY</b>
+          <span>IPHONES SOLD DAILY AVERAGE</span>
+        </article>
+        <article>
+          <b>1.37M</b>
+          <span>EGP MANAGED AD SPEND</span>
+        </article>
+        <article>
+          <b>466.1K</b>
+          <span>UNIQUE WEB & STORE CLICKS</span>
+        </article>
+        <article>
+          <b>2.94</b>
+          <span>EGP OVERALL AVERAGE CPC</span>
+        </article>
+      </div>
+
+      <!-- SERIES NAVIGATION -->
+      <div class="series-switcher">
+        <div>
+          <strong style="color:#fff; display:block; margin-bottom:4px;">سلسلة كيس ستادي TRUST STORE:</strong>
+          <p>عاين الجزء الثاني الخاص بالحملات الإعلانية المباشرة لاتصالات الفروع وحملة Call 6/7 5 بنسبة CTR 8.16% وتكلفة 0.63 جنيه.</p>
+        </div>
+        <a href="../trust-store-calls/">فتح كيس ستادي RETAIL CALLS ENGINE ←</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSE / LEARNING -->
+  <section class="close">
+    <div class="wrap close-grid">
+      <div>
+        <p class="label">05 / THE STRATEGIC LEARNING</p>
+        <h2>TRUST IS NOT<br>A SLOGAN.</h2>
+      </div>
+      <div>
+        <p>
+          في بيع الإلكترونيات باهظة الثمن، العميل لا يبحث عن أرخص إعلان، بل يبحث عن أقل تجربة فيها مخاطرة. عندما توفر له دليلاً مرئياً أصلياً، وتفتح له خط محادثة لاستفسارات التقسيط ومسار اتصال مباشر للتأكد من حجز جهازه بالفرع، تتحول مبيعات الآيفون من صفقات عشوائية إلى وتيرة تجارية يومية لا تتوقف.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
