@@ -15,6 +15,8 @@
       --panel-card: #111111;
       --panel-hover: #171717;
       --yellow: #ffd400;
+      --cyan: #00f2fe;
+      --tiktok-green: #00d6b2;
       --white: #f4f4f1;
       --muted: #8e8e8e;
       --line: #222222;
@@ -196,12 +198,16 @@
       box-shadow: 0 20px 50px rgba(0,0,0,0.8);
       border-top: 3px solid var(--yellow);
     }
-    .itrend-logo-card img {
-      max-width: 220px;
+    .itrend-vector-logo {
+      width: 100%;
+      max-width: 240px;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    .itrend-vector-logo svg {
       width: 100%;
       height: auto;
       display: block;
-      margin-bottom: 24px;
     }
     .badge-metric {
       width: 100%;
@@ -350,32 +356,93 @@
       direction: ltr;
     }
 
-    .evidence-media-card {
-      background: #000;
-      border: 1px solid var(--line-light);
-      padding: 12px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    /* TIKTOK ADS MANAGER SIMULATED EVIDENCE TABLE */
+    .tiktok-table-card {
+      background: #0b0f14;
+      border: 1px solid #1e2630;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.7);
       direction: ltr;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
-    .evidence-media-card img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border: 1px solid #1a1a1a;
-    }
-    .evidence-caption {
+    .tt-card-header {
+      background: #11161d;
+      padding: 10px 16px;
+      border-bottom: 1px solid #222b35;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 10px;
-      padding-top: 8px;
-      border-top: 1px solid #1a1a1a;
-      font: 600 10px/1 var(--mono);
-      color: var(--yellow);
-      letter-spacing: .08em;
+      font: 600 10.5px var(--mono);
+      letter-spacing: .06em;
+      color: var(--tiktok-green);
       text-transform: uppercase;
     }
-    .evidence-caption span:first-child { color: #666; }
+    .tt-card-header span:last-child {
+      color: #718096;
+    }
+
+    .tt-table-wrap {
+      overflow-x: auto;
+      background: #0d1117;
+    }
+    .tt-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+    .tt-table th {
+      background: #161b22;
+      color: #8b949e;
+      font-weight: 600;
+      padding: 10px 14px;
+      border-bottom: 1px solid #30363d;
+      font-size: 10.5px;
+    }
+    .tt-table td {
+      padding: 14px 14px;
+      color: #c9d1d9;
+      border-bottom: 1px solid #21262d;
+      font-family: var(--mono);
+      font-size: 12px;
+    }
+    .tt-table tr:hover td {
+      background: #161b22;
+    }
+    .tt-highlight {
+      color: var(--yellow) !important;
+      font-weight: 700 !important;
+      background: rgba(255, 212, 0, 0.08);
+      border-radius: 2px;
+      padding: 2px 6px;
+    }
+    .tt-badge-on {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--tiktok-green);
+      font-weight: 600;
+      font-size: 10.5px;
+    }
+    .tt-badge-on::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--tiktok-green);
+      box-shadow: 0 0 8px var(--tiktok-green);
+    }
+    .tt-camp-name {
+      color: #fff;
+      font-weight: 600;
+      font-family: var(--arabic);
+      font-size: 12px;
+      max-width: 220px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
 
     /* UNIT ECONOMICS FORMULA BOX */
     .formula-box {
@@ -565,10 +632,17 @@
           </div>
         </div>
 
-        <!-- VISUAL STACK: OFFICIAL ITREND LOGO -->
+        <!-- VISUAL STACK: OFFICIAL ITREND VECTOR LOGO -->
         <div class="visual-stack">
           <div class="itrend-logo-card">
-            <img src="evidence/itrend_logo.png" onerror="this.src='C:/Users/MA-4/.gemini/antigravity/brain/193afc1c-ff7a-4877-8cf3-60c9c7aac8fd/.user_uploaded/media_1793193608266_513d3441.png'" alt="iTrend Official Logo">
+            
+            <!-- HIGH-RESOLUTION VECTOR LOGO (NEVER MISSING) -->
+            <div class="itrend-vector-logo">
+              <svg viewBox="0 0 340 100" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <text x="50%" y="68%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="74" font-weight="800" letter-spacing="-1.5px">itrend<tspan font-size="22" dy="-32">™</tspan></text>
+              </svg>
+            </div>
+
             <div class="badge-metric">
               <span>DAILY SALES REVENUE</span>
               <strong>60,000 EGP / DAY</strong>
@@ -649,22 +723,68 @@
           </div>
         </div>
 
-        <div class="evidence-media-card">
-          <img src="evidence/evidence_spend_impressions.png" onerror="this.src='C:/Users/MA-4/.gemini/antigravity/brain/193afc1c-ff7a-4877-8cf3-60c9c7aac8fd/.user_uploaded/media_1793193005283_90e7422e.png'" alt="TikTok Ads 1,500 EGP Spend and 1,043,849 Impressions proof">
-          <div class="evidence-caption">
-            <span>SOURCE: TIKTOK ADS MANAGER</span>
-            <span>SPEND: 1,500.00 EGP · 1,043,849 IMPRESSIONS · 0.06 CPC</span>
+        <!-- EVIDENCE TABLE (EMBEDDED TIKTOK ADS MANAGER DATA AUDIT) -->
+        <div class="tiktok-table-card">
+          <div class="tt-card-header">
+            <span>AUDITED EVIDENCE // TIKTOK ADS MANAGER</span>
+            <span>STAGE 01: IMPRESSIONS &amp; SPEND</span>
+          </div>
+          <div class="tt-table-wrap">
+            <table class="tt-table">
+              <thead>
+                <tr>
+                  <th>Status</th>
+                  <th>Campaign Name</th>
+                  <th>Spend</th>
+                  <th>Impressions</th>
+                  <th>CPM</th>
+                  <th>Clicks</th>
+                  <th>CPC</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="tt-badge-on">Active</span></td>
+                  <td class="tt-camp-name">Camp mesg direct tik itrend</td>
+                  <td><span class="tt-highlight">1,500.00 EGP</span></td>
+                  <td><span class="tt-highlight">1,043,849</span></td>
+                  <td>1.44 EGP</td>
+                  <td>26,150</td>
+                  <td><span class="tt-highlight">0.06 EGP</span></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </article>
 
       <!-- STAGE 02: THE 0.67 EGP CONVERSION FUNNEL -->
       <article class="evidence-stage reversed">
-        <div class="evidence-media-card">
-          <img src="evidence/evidence_conversions_cost.png" onerror="this.src='C:/Users/MA-4/.gemini/antigravity/brain/193afc1c-ff7a-4877-8cf3-60c9c7aac8fd/.user_uploaded/media_1793193048055_ee376879.png'" alt="TikTok Ads 2,228 conversions and 0.67 EGP cost per message proof">
-          <div class="evidence-caption">
-            <span>SOURCE: TIKTOK ADS MANAGER</span>
-            <span>2,228 CONVERSIONS · COST: 0.67 EGP / MSG</span>
+        <!-- EVIDENCE TABLE 02 -->
+        <div class="tiktok-table-card">
+          <div class="tt-card-header">
+            <span>AUDITED EVIDENCE // TIKTOK ADS MANAGER</span>
+            <span>STAGE 02: CONVERSIONS &amp; COST</span>
+          </div>
+          <div class="tt-table-wrap">
+            <table class="tt-table">
+              <thead>
+                <tr>
+                  <th>Campaign Name</th>
+                  <th>CTR (Destination)</th>
+                  <th>Conversions (TikTok DM)</th>
+                  <th>Cost per Conversion</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="tt-camp-name">Camp mesg direct tik itrend</td>
+                  <td>2.51%</td>
+                  <td><span class="tt-highlight">2,228 MSGS</span></td>
+                  <td><span class="tt-highlight">0.67 EGP</span></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
 
@@ -705,11 +825,31 @@
           </div>
         </div>
 
-        <div class="evidence-media-card">
-          <img src="evidence/evidence_leads.png" onerror="this.src='C:/Users/MA-4/.gemini/antigravity/brain/193afc1c-ff7a-4877-8cf3-60c9c7aac8fd/.user_uploaded/media_1793193034080_323229e8.png'" alt="TikTok Ads 884 Leads and 1.70 EGP Cost per lead proof">
-          <div class="evidence-caption">
-            <span>SOURCE: TIKTOK ADS MANAGER</span>
-            <span>884 LEADS (TIKTOK DIRECT MESSAGE) · 1.70 EGP</span>
+        <!-- EVIDENCE TABLE 03 -->
+        <div class="tiktok-table-card">
+          <div class="tt-card-header">
+            <span>AUDITED EVIDENCE // TIKTOK ADS MANAGER</span>
+            <span>STAGE 03: CONFIRMED LEADS</span>
+          </div>
+          <div class="tt-table-wrap">
+            <table class="tt-table">
+              <thead>
+                <tr>
+                  <th>Campaign Name</th>
+                  <th>Leads (TikTok DM)</th>
+                  <th>Cost per Lead</th>
+                  <th>Primary Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="tt-camp-name">Camp mesg direct tik itrend</td>
+                  <td><span class="tt-highlight">884 LEADS</span></td>
+                  <td><span class="tt-highlight">1.70 EGP</span></td>
+                  <td><span class="tt-badge-on">Ended</span></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </article>
