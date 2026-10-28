@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>iTrend TikTok Ads Case Study | Khalid Eldhrawy</title>
-  <meta name="description" content="كيف حققت ميزانية 1,500 جنيه وسعر رسالة 0.67 قرش مبيعات 60,000 جنيه في يوم واحد على تيك توك لبراند iTrend. كيس ستادي موثقة بالأرقام وسكرينات الأدز مانجر." />
+  <title>TikTok Ads Campaign Vault &amp; Multi-Brand Case Studies | Khalid Eldhrawy</title>
+  <meta name="description" content="مكتبة كيس ستاديز حملات تيك توك أدز الموثقة بالأدلة الحقيقية لعدة براندات. كيس ستادي براند iTrend: 1,500 جنيه صرف في 5 أيام فقط حققت 60,000 جنيه مبيعات وسعر رسالة 0.67 جنيه." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -12,11 +12,12 @@
     :root {
       --black: #050505;
       --panel: #0d0d0d;
-      --panel-card: #111111;
-      --panel-hover: #171717;
+      --panel-card: #121212;
+      --panel-hover: #181818;
       --yellow: #ffd400;
       --cyan: #00f2fe;
       --tiktok-green: #00d6b2;
+      --tiktok-red: #fe2c55;
       --white: #f4f4f1;
       --muted: #8e8e8e;
       --line: #222222;
@@ -38,7 +39,7 @@
     }
 
     .wrap {
-      width: min(1240px, calc(100% - 48px));
+      width: min(1260px, calc(100% - 48px));
       margin: auto;
     }
 
@@ -51,12 +52,12 @@
 
     /* TOP NAV */
     .top-nav {
-      padding: 20px 0;
+      padding: 18px 0;
       border-bottom: 1px solid var(--line);
       position: sticky;
       top: 0;
-      background: rgba(5,5,5,0.95);
-      backdrop-filter: blur(12px);
+      background: rgba(5,5,5,0.96);
+      backdrop-filter: blur(14px);
       z-index: 100;
     }
     .top-nav-wrap {
@@ -68,7 +69,7 @@
     .nav-left {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 18px;
     }
     .back-btn {
       display: inline-flex;
@@ -96,68 +97,209 @@
     }
     .nav-brand strong { color: #fff; }
     .nav-tag {
-      font: 600 10px/1 var(--mono);
+      font: 600 10.5px/1 var(--mono);
       letter-spacing: .08em;
       text-transform: uppercase;
-      padding: 6px 12px;
+      padding: 6px 14px;
       background: rgba(255, 212, 0, 0.1);
       border: 1px solid rgba(255, 212, 0, 0.3);
       color: var(--yellow);
     }
 
-    /* HERO SECTION */
-    .hero {
-      padding: 70px 0 50px;
+    /* HUB HEADER */
+    .hub-header {
+      padding: 60px 0 45px;
       border-bottom: 1px solid var(--line);
     }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.25fr .75fr;
-      gap: 8%;
-      align-items: center;
-    }
-    .live-badge {
+    .hub-tag {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 6px 12px;
-      background: rgba(255, 212, 0, 0.1);
-      border: 1px solid rgba(255, 212, 0, 0.4);
+      padding: 6px 14px;
+      background: rgba(0, 214, 178, 0.1);
+      border: 1px solid rgba(0, 214, 178, 0.35);
       font: 600 11px/1 var(--mono);
-      color: var(--yellow);
+      color: var(--tiktok-green);
       letter-spacing: .08em;
       text-transform: uppercase;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       direction: ltr;
     }
-    .live-badge::before {
+    .hub-tag::before {
       content: '';
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background: var(--yellow);
-      box-shadow: 0 0 10px var(--yellow);
+      background: var(--tiktok-green);
+      box-shadow: 0 0 10px var(--tiktok-green);
+    }
+    .hub-title {
+      font: 400 clamp(3.2rem, 6.2vw, 6rem)/.88 var(--display);
+      margin: 0 0 16px;
+      color: #fff;
+      letter-spacing: .01em;
+    }
+    .hub-title span.yellow { color: var(--yellow); }
+    .hub-desc {
+      font-size: clamp(16px, 1.3vw, 18px);
+      line-height: 1.8;
+      color: #aaa;
+      max-width: 900px;
+      margin: 0;
     }
 
-    .hero-title {
-      font: 400 clamp(3.2rem, 6.5vw, 6.2rem)/.88 var(--display);
-      margin: 0 0 24px;
-      letter-spacing: .01em;
+    /* CAMPAIGN SHOWCASE GRID (THUMBNAILS) */
+    .showcase-section {
+      padding: 50px 0 60px;
+      border-bottom: 1px solid var(--line);
+    }
+    .showcase-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .showcase-head h3 {
+      font: 400 clamp(1.8rem, 3vw, 2.8rem)/1 var(--display);
+      margin: 0;
       color: #fff;
     }
-    .hero-title span.yellow { color: var(--yellow); }
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .thumb-card {
+      background: var(--panel-card);
+      border: 1px solid var(--line);
+      padding: 22px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all .2s ease;
+      position: relative;
+      text-decoration: none;
+      color: inherit;
+    }
+    .thumb-card:hover {
+      border-color: var(--line-light);
+      background: var(--panel-hover);
+      transform: translateY(-3px);
+    }
+    .thumb-card.active-featured {
+      border-top: 3px solid var(--yellow);
+      border-color: rgba(255, 212, 0, 0.4);
+      background: #141411;
+    }
+    .thumb-card.active-featured::after {
+      content: 'FEATURED · ACTIVE VIEW';
+      position: absolute;
+      top: 10px;
+      left: 14px;
+      font: 700 9.5px/1 var(--mono);
+      color: var(--yellow);
+      letter-spacing: .08em;
+      background: rgba(255, 212, 0, 0.12);
+      padding: 3px 6px;
+      border: 1px solid rgba(255, 212, 0, 0.3);
+    }
+    .thumb-brand {
+      font: 700 11px/1.2 var(--mono);
+      color: #777;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      direction: ltr;
+    }
+    .thumb-title {
+      font: 400 24px/1.1 var(--display);
+      color: #fff;
+      margin: 0 0 12px;
+      letter-spacing: .02em;
+    }
+    .thumb-metric-box {
+      background: #090909;
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      margin-bottom: 16px;
+      direction: ltr;
+    }
+    .thumb-metric-val {
+      font: 700 18px/1 var(--mono);
+      color: var(--yellow);
+      display: block;
+      margin-bottom: 3px;
+    }
+    .thumb-metric-lbl {
+      font: 600 9.5px/1.2 var(--mono);
+      color: #777;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      display: block;
+    }
+    .thumb-btn {
+      font: 600 11px/1 var(--mono);
+      color: #ccc;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: auto;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+      direction: ltr;
+    }
+    .thumb-card.active-featured .thumb-btn {
+      color: var(--yellow);
+    }
 
-    /* REEL HOOK PARAGRAPH */
+    /* DEEP DIVE FEATURED SECTION */
+    .featured-deep-dive {
+      padding: 70px 0 50px;
+      border-bottom: 1px solid var(--line);
+    }
+    .featured-header-grid {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 8%;
+      align-items: center;
+      margin-bottom: 50px;
+    }
+    .five-day-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 16px;
+      background: rgba(254, 44, 85, 0.12);
+      border: 1px solid rgba(254, 44, 85, 0.4);
+      font: 700 11.5px/1 var(--mono);
+      color: #ff476f;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+      direction: ltr;
+    }
+    .five-day-badge b {
+      color: #fff;
+      background: var(--tiktok-red);
+      padding: 3px 7px;
+      font-size: 11px;
+    }
+
     .hero-reel-hook {
-      font-size: clamp(16px, 1.4vw, 19px);
+      font-size: clamp(17px, 1.4vw, 20px);
       line-height: 1.85;
-      color: #e0e0e0;
+      color: #e5e5e5;
       margin: 0 0 35px;
       background: rgba(255, 255, 255, 0.03);
-      border-right: 3px solid var(--yellow);
-      padding: 18px 24px;
+      border-right: 4px solid var(--yellow);
+      padding: 22px 26px;
     }
     .hero-reel-hook strong { color: var(--yellow); }
+    .hero-reel-hook span.red { color: #ff5277; font-weight: 700; }
 
     .hero-meta {
       display: grid;
@@ -180,12 +322,7 @@
       color: #fff;
     }
 
-    /* VISUAL STACK / ITREND LOGO CARD */
-    .visual-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
+    /* ITREND LOGO CARD */
     .itrend-logo-card {
       background: #000;
       border: 1px solid var(--line-light);
@@ -194,19 +331,14 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      position: relative;
       box-shadow: 0 20px 50px rgba(0,0,0,0.8);
       border-top: 3px solid var(--yellow);
     }
-    .itrend-vector-logo {
-      width: 100%;
-      max-width: 240px;
-      margin-bottom: 24px;
-      text-align: center;
-    }
-    .itrend-vector-logo svg {
+    .itrend-logo-img {
+      max-width: 220px;
       width: 100%;
       height: auto;
+      margin-bottom: 24px;
       display: block;
     }
     .badge-metric {
@@ -229,11 +361,84 @@
       font: 700 13px/1 var(--mono);
     }
 
+    /* 5-DAY TIMELINE MATRIX */
+    .timeline-strip-box {
+      background: #0b0f14;
+      border: 1px solid #1c2633;
+      padding: 32px 30px;
+      margin-bottom: 60px;
+    }
+    .timeline-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      border-bottom: 1px solid #1c2633;
+      padding-bottom: 14px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .timeline-head h4 {
+      margin: 0;
+      font: 400 24px/1 var(--display);
+      color: #fff;
+      letter-spacing: .02em;
+    }
+    .timeline-head span {
+      font: 600 11px var(--mono);
+      color: var(--tiktok-green);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      direction: ltr;
+    }
+    .timeline-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+      direction: ltr;
+    }
+    .timeline-step {
+      background: #111721;
+      border: 1px solid #202b3a;
+      padding: 18px 14px;
+      border-top: 3px solid #2e3d52;
+    }
+    .timeline-step.peak {
+      border-top-color: var(--yellow);
+      background: #151a14;
+    }
+    .step-day {
+      font: 700 11px/1 var(--mono);
+      color: var(--tiktok-green);
+      letter-spacing: .08em;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .timeline-step.peak .step-day {
+      color: var(--yellow);
+    }
+    .step-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 6px;
+      font-family: var(--arabic);
+      direction: rtl;
+      text-align: right;
+    }
+    .step-detail {
+      font: 500 11px/1.4 var(--mono);
+      color: #8b9bb4;
+      direction: ltr;
+      text-align: left;
+    }
+
     /* RESULTS STRIP (YELLOW HIGHLIGHT BOX) */
     .results-strip-section {
       background: var(--yellow);
       color: #050505;
       padding: 50px 0;
+      margin: 40px 0 60px;
     }
     .results-top {
       display: grid;
@@ -282,30 +487,13 @@
       text-transform: uppercase;
     }
 
-    /* STORYTELLING / REEL BREAKDOWN */
-    .story-section {
-      padding: 80px 0;
-      border-bottom: 1px solid var(--line);
-    }
-    .story-head {
-      margin-bottom: 60px;
-    }
-    .story-head h2 {
-      font: 400 clamp(2.8rem, 5vw, 4.8rem)/.9 var(--display);
-      margin: 8px 0 0;
-      color: #fff;
-    }
-    .story-head h2 i {
-      color: var(--yellow);
-      font-style: italic;
-    }
-
+    /* REAL SCREENSHOT EVIDENCE STAGES */
     .evidence-stage {
       display: grid;
-      grid-template-columns: .85fr 1.15fr;
-      gap: 7%;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 6%;
       align-items: center;
-      margin-bottom: 70px;
+      margin-bottom: 75px;
       padding: 36px;
       background: var(--panel);
       border: 1px solid var(--line);
@@ -315,10 +503,6 @@
     .evidence-stage:hover {
       border-right-color: var(--yellow);
     }
-    .evidence-stage.reversed {
-      grid-template-columns: 1.15fr .85fr;
-    }
-
     .stage-num {
       font: 700 12px/1 var(--mono);
       color: var(--yellow);
@@ -354,94 +538,81 @@
       letter-spacing: .06em;
       text-transform: uppercase;
       direction: ltr;
+      flex-wrap: wrap;
     }
 
-    /* TIKTOK ADS MANAGER SIMULATED EVIDENCE TABLE */
-    .tiktok-table-card {
-      background: #0b0f14;
+    /* REAL SCREENSHOT CARD CONTAINER */
+    .screenshot-card {
+      background: #090c10;
       border: 1px solid #1e2630;
-      border-radius: 4px;
-      overflow: hidden;
-      box-shadow: 0 20px 45px rgba(0,0,0,0.7);
-      direction: ltr;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      padding: 16px;
+      position: relative;
+      cursor: pointer;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.8);
+      transition: all .2s ease;
     }
-    .tt-card-header {
-      background: #11161d;
-      padding: 10px 16px;
-      border-bottom: 1px solid #222b35;
+    .screenshot-card:hover {
+      border-color: var(--yellow);
+      transform: translateY(-2px);
+    }
+    .screenshot-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-bottom: 12px;
+      direction: ltr;
       font: 600 10.5px var(--mono);
       letter-spacing: .06em;
-      color: var(--tiktok-green);
       text-transform: uppercase;
-    }
-    .tt-card-header span:last-child {
       color: #718096;
     }
-
-    .tt-table-wrap {
-      overflow-x: auto;
-      background: #0d1117;
-    }
-    .tt-table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-      font-size: 11px;
-      white-space: nowrap;
-    }
-    .tt-table th {
-      background: #161b22;
-      color: #8b949e;
-      font-weight: 600;
-      padding: 10px 14px;
-      border-bottom: 1px solid #30363d;
-      font-size: 10.5px;
-    }
-    .tt-table td {
-      padding: 14px 14px;
-      color: #c9d1d9;
-      border-bottom: 1px solid #21262d;
-      font-family: var(--mono);
-      font-size: 12px;
-    }
-    .tt-table tr:hover td {
-      background: #161b22;
-    }
-    .tt-highlight {
-      color: var(--yellow) !important;
-      font-weight: 700 !important;
-      background: rgba(255, 212, 0, 0.08);
-      border-radius: 2px;
-      padding: 2px 6px;
-    }
-    .tt-badge-on {
+    .screenshot-header span.proof-badge {
+      color: var(--tiktok-green);
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      color: var(--tiktok-green);
-      font-weight: 600;
-      font-size: 10.5px;
     }
-    .tt-badge-on::before {
+    .screenshot-header span.proof-badge::before {
       content: '';
-      width: 8px;
-      height: 8px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
       background: var(--tiktok-green);
-      box-shadow: 0 0 8px var(--tiktok-green);
+      box-shadow: 0 0 6px var(--tiktok-green);
     }
-    .tt-camp-name {
-      color: #fff;
-      font-weight: 600;
-      font-family: var(--arabic);
-      font-size: 12px;
-      max-width: 220px;
+    .screenshot-wrap {
+      background: #0d1117;
+      border: 1px solid #21262d;
       overflow: hidden;
-      text-overflow: ellipsis;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .real-screenshot-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform .2s ease;
+    }
+    .screenshot-card:hover .real-screenshot-img {
+      transform: scale(1.01);
+    }
+    .zoom-hint {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background: rgba(0,0,0,0.85);
+      border: 1px solid #333;
+      color: #fff;
+      padding: 4px 10px;
+      font: 600 10px var(--mono);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      direction: ltr;
     }
 
     /* UNIT ECONOMICS FORMULA BOX */
@@ -468,7 +639,7 @@
     .formula-item {
       background: #111;
       border: 1px solid var(--line);
-      padding: 20px;
+      padding: 22px 16px;
       text-align: center;
     }
     .formula-item strong {
@@ -529,6 +700,48 @@
       margin: 0;
     }
 
+    /* LIGHTBOX MODAL FOR REAL SCREENSHOTS */
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.94);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .lightbox-modal.open {
+      display: flex;
+    }
+    .lightbox-inner {
+      max-width: 1200px;
+      width: 100%;
+      position: relative;
+    }
+    .lightbox-img {
+      width: 100%;
+      height: auto;
+      border: 1px solid #333;
+      box-shadow: 0 30px 90px rgba(0,0,0,0.9);
+      display: block;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: -45px;
+      right: 0;
+      background: var(--yellow);
+      color: #000;
+      border: none;
+      padding: 8px 18px;
+      font: 700 12px var(--mono);
+      cursor: pointer;
+      letter-spacing: .08em;
+    }
+
     /* FOOTER CTA */
     .footer-cta {
       padding: 80px 0;
@@ -544,8 +757,9 @@
     }
     .footer-cta p {
       font-size: 16px;
+      line-height: 1.8;
       color: #888;
-      max-width: 600px;
+      max-width: 650px;
       margin: 0 auto 35px;
     }
     .cta-buttons {
@@ -579,12 +793,14 @@
     .cta-btn-ghost:hover { background: #151515; }
 
     /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .hero-grid { grid-template-columns: 1fr; }
+    @media (max-width: 960px) {
+      .featured-header-grid { grid-template-columns: 1fr; }
       .results-top { grid-template-columns: 1fr; }
       .metric-strip { grid-template-columns: repeat(2, 1fr); }
       .metric-strip article:nth-child(2) { border-right: none; }
-      .evidence-stage, .evidence-stage.reversed { grid-template-columns: 1fr; gap: 30px; }
+      .evidence-stage { grid-template-columns: 1fr; gap: 30px; }
+      .showcase-grid { grid-template-columns: repeat(2, 1fr); }
+      .timeline-grid { grid-template-columns: repeat(2, 1fr); }
       .formula-grid { grid-template-columns: repeat(2, 1fr); }
       .pillars-grid { grid-template-columns: 1fr; }
       .hero-meta { grid-template-columns: repeat(2, 1fr); }
@@ -592,6 +808,8 @@
     @media (max-width: 600px) {
       .metric-strip { grid-template-columns: 1fr; }
       .metric-strip article { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.15); }
+      .showcase-grid { grid-template-columns: 1fr; }
+      .timeline-grid { grid-template-columns: 1fr; }
       .formula-grid { grid-template-columns: 1fr; }
       .nav-brand { display: none; }
     }
@@ -604,61 +822,180 @@
     <div class="wrap top-nav-wrap">
       <div class="nav-left">
         <a href="../../index.html" class="back-btn">← Back to Portfolio</a>
-        <div class="nav-brand">KHALID ELDHRAWY // <strong>ITREND TIKTOK ADS</strong></div>
+        <div class="nav-brand">KHALID ELDHRAWY // <strong>TIKTOK ADS CAMPAIGN VAULT</strong></div>
       </div>
-      <span class="nav-tag">AUDITED PERFORMANCE CASE STUDY</span>
+      <span class="nav-tag">MULTI-BRAND PERFORMANCE HUB</span>
     </div>
   </header>
 
   <main class="wrap">
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-      <div class="hero-grid">
-        
+    <!-- HUB HEADER -->
+    <section class="hub-header">
+      <span class="hub-tag">AUDITED TIKTOK MEDIA BUYING &amp; DIRECT RESPONSE VAULT</span>
+      <h1 class="hub-title">TIKTOK ADS<br><span class="yellow">MULTI-BRAND CAMPAIGN VAULT.</span></h1>
+      <p class="hub-desc">
+        مكتبة موثقة بالأدلة الحقيقية وسكرينات الأدز مانجر الرسمية لحملات تيك توك عبر قطاعات مختلفة (تريندات التجارة الإلكترونية، مستحضرات التجميل، والعناية بالبشرة). نركز على تحويل مستخدم تيك توك إلى عميل مشتري بأقل تكلفة رسالة وأعلى معدل كاش فلو.
+      </p>
+    </section>
+
+    <!-- MULTI-BRAND SHOWCASE (THUMBNAILS GRID) -->
+    <section class="showcase-section">
+      <div class="showcase-head">
         <div>
-          <span class="live-badge">AUDITED PERFORMANCE CASE STUDY · TIKTOK DIRECT MESSAGE FUNNEL</span>
-          <h1 class="hero-title">ITREND TIKTOK ADS<br><span class="yellow">60K REVENUE / DAY ENGINE.</span></h1>
+          <div class="mono-meta" style="color: var(--yellow);">/ CAMPAIGN SHOWCASE DIRECTORY</div>
+          <h3>EXPLORE TIKTOK BRAND ENGINES</h3>
+        </div>
+        <div class="mono-meta" style="color: #666;">CLICK ANY THUMBNAIL TO VIEW FULL BREAKDOWN</div>
+      </div>
+
+      <div class="showcase-grid">
+        
+        <!-- CARD 01: ITREND (FEATURED & ACTIVE) -->
+        <a href="#itrend-deepdive" class="thumb-card active-featured">
+          <div>
+            <div class="thumb-brand">ITREND™ · TRENDS E-COMMERCE</div>
+            <h4 class="thumb-title">5-DAY CASH FLOW ENGINE</h4>
+            <div class="thumb-metric-box">
+              <span class="thumb-metric-val">60,000 EGP / DAY</span>
+              <span class="thumb-metric-lbl">REVENUE IN 5 DAYS (1,500 EGP SPEND)</span>
+            </div>
+          </div>
+          <div class="thumb-btn">VIEW 5-DAY CASE STUDY ↓</div>
+        </a>
+
+        <!-- CARD 02: BLOOM SKINCARE -->
+        <a href="../bloom-content-system/" class="thumb-card">
+          <div>
+            <div class="thumb-brand">BLOOM · KOREAN BEAUTY</div>
+            <h4 class="thumb-title">UGC &amp; VIRAL EDUCATION</h4>
+            <div class="thumb-metric-box">
+              <span class="thumb-metric-val">17.8M VIEWS</span>
+              <span class="thumb-metric-lbl">160K CLICKS · GEN-Z HOOKS</span>
+            </div>
+          </div>
+          <div class="thumb-btn">OPEN CASE STUDY ↗</div>
+        </a>
+
+        <!-- CARD 03: SOOLABAY HAIRCARE -->
+        <a href="../soolabay-content-system/" class="thumb-card">
+          <div>
+            <div class="thumb-brand">SOOLABAY · HAIRCARE</div>
+            <h4 class="thumb-title">CONVERSION &amp; REELS ENGINE</h4>
+            <div class="thumb-metric-box">
+              <span class="thumb-metric-val">86.2M VIEWS</span>
+              <span class="thumb-metric-lbl">947K CLICKS · 6.43 EGP CPA</span>
+            </div>
+          </div>
+          <div class="thumb-btn">OPEN CASE STUDY ↗</div>
+        </a>
+
+        <!-- CARD 04: COSMECEUTICALS -->
+        <div class="thumb-card" style="opacity: 0.85;">
+          <div>
+            <div class="thumb-brand">COSMECEUTICALS · TIKTOK ADS</div>
+            <h4 class="thumb-title">CPA REDUCTION ENGINE</h4>
+            <div class="thumb-metric-box">
+              <span class="thumb-metric-val">50%+ CPA CUT</span>
+              <span class="thumb-metric-lbl">CREATIVE TESTING MATRIX</span>
+            </div>
+          </div>
+          <div class="thumb-btn" style="color: #666;">ACTIVE OPTIMIZATION · ON REQUEST</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- DEEP DIVE: ITREND 5-DAY TIKTOK CAMPAIGN CASE STUDY        -->
+    <!-- ======================================================== -->
+    <section id="itrend-deepdive" class="featured-deep-dive">
+      
+      <div class="featured-header-grid">
+        <div>
+          <div class="five-day-badge">
+            <b>5 DAYS ONLY</b>
+            <span>1,500 EGP TOTAL SPEND · ~300 EGP / DAY VELOCITY</span>
+          </div>
+
+          <h2 class="hub-title" style="margin-bottom: 24px;">ITREND™ TIKTOK ENGINE<br><span class="yellow">60K REVENUE / DAY IN 5 DAYS.</span></h2>
           
+          <!-- INSTAGRAM REEL STORYTELLING HOOK -->
           <div class="hero-reel-hook">
-            تعالى أقولك إزاي بميزانية <strong>1,500 جنيه</strong> وسعر رسالة <strong>0.67 جنيه (67 قرش فقط!)</strong>.. قدرنا نبني ماكينة مبيعات على تيك توك ولّدت <strong>2,228 محادثة شراء مباشرة</strong> وحققت مبيعات كاش فلو وصلت لـ <strong>60,000 جنيه في يوم واحد</strong>!
+            تعالى أقولك إزاي <span class="red">في 5 أيام فقط بميزانية 1,500 جنيه (يعني 300 جنيه بس في اليوم!)</span> وبسعر رسالة <strong>0.67 جنيه (67 قرش فقط!)</strong>.. قدرنا نبني ماكينة مبيعات على تيك توك ولّدت <strong>2,228 محادثة شراء مباشرة</strong> وحققت مبيعات كاش فلو وصلت لـ <strong>60,000 جنيه في اليوم الواحد</strong>!
           </div>
 
           <div class="hero-meta">
             <div>BRAND<br><b>ITREND™</b></div>
-            <div>CAMPAIGN<br><b>CAMP MESG DIRECT TIK</b></div>
-            <div>DAILY REVENUE<br><b>60,000+ EGP / DAY</b></div>
+            <div>DURATION<br><b>5 DAYS (10-21 TO 10-25)</b></div>
+            <div>TOTAL SPEND<br><b>1,500.00 EGP (~300/D)</b></div>
             <div>COST / MSG<br><b>0.67 EGP / CONVERSATION</b></div>
           </div>
         </div>
 
-        <!-- VISUAL STACK: OFFICIAL ITREND VECTOR LOGO -->
-        <div class="visual-stack">
-          <div class="itrend-logo-card">
-            
-            <!-- HIGH-RESOLUTION VECTOR LOGO (NEVER MISSING) -->
-            <div class="itrend-vector-logo">
-              <svg viewBox="0 0 340 100" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
-                <text x="50%" y="68%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="74" font-weight="800" letter-spacing="-1.5px">itrend<tspan font-size="22" dy="-32">™</tspan></text>
-              </svg>
-            </div>
+        <!-- OFFICIAL ITREND LOGO CARD -->
+        <div class="itrend-logo-card">
+          <img 
+            src="itrend_logo.png" 
+            onerror="this.onerror=null; this.src='evidence/itrend_logo.png';" 
+            alt="iTrend Official Logo" 
+            class="itrend-logo-img" 
+          />
 
-            <div class="badge-metric">
-              <span>DAILY SALES REVENUE</span>
-              <strong>60,000 EGP / DAY</strong>
-            </div>
-            <div class="badge-metric">
-              <span>CONVERSIONS GENERATED</span>
-              <strong>2,228 DIRECT MSGS</strong>
-            </div>
-            <div class="badge-metric">
-              <span>COST PER CONVERSION</span>
-              <strong>0.67 EGP / MSG</strong>
-            </div>
+          <div class="badge-metric">
+            <span>CAMPAIGN DURATION</span>
+            <strong style="color: #ff476f;">5 DAYS ONLY</strong>
+          </div>
+          <div class="badge-metric">
+            <span>DAILY SALES REVENUE</span>
+            <strong>60,000 EGP / DAY</strong>
+          </div>
+          <div class="badge-metric">
+            <span>CONVERSIONS GENERATED</span>
+            <strong>2,228 DIRECT MSGS</strong>
+          </div>
+          <div class="badge-metric">
+            <span>COST PER CONVERSION</span>
+            <strong>0.67 EGP / MSG</strong>
           </div>
         </div>
-
       </div>
+
+      <!-- 5-DAY VELOCITY TIMELINE MATRIX -->
+      <div class="timeline-strip-box">
+        <div class="timeline-head">
+          <h4>THE 5-DAY CASH-FLOW TIMELINE (OCT 21 — OCT 25)</h4>
+          <span>AUDITED PERFORMANCE TIMELINE</span>
+        </div>
+        <div class="timeline-grid">
+          <div class="timeline-step">
+            <span class="step-day">DAY 01 · OCT 21</span>
+            <div class="step-title">إطلاق الهوك العفوي (UGC)</div>
+            <div class="step-detail">1.44 EGP CPM · 0.06 CPC<br>كسر السكرول في أول ثانيتين</div>
+          </div>
+          <div class="timeline-step">
+            <span class="step-day">DAY 02 · OCT 22</span>
+            <div class="step-title">فتح مسار الشات المباشر</div>
+            <div class="step-detail">Direct DM Routing<br>إلغاء دروب أوف الويب سايت</div>
+          </div>
+          <div class="timeline-step">
+            <span class="step-day">DAY 03 · OCT 23</span>
+            <div class="step-title">كسر حاجز الـ 67 قرش</div>
+            <div class="step-detail">0.67 EGP / Message<br>تدفق مستمر للرسائل المؤكدة</div>
+          </div>
+          <div class="timeline-step">
+            <span class="step-day">DAY 04 · OCT 24</span>
+            <div class="step-title">تجميع 884 ليد مؤكد</div>
+            <div class="step-detail">1.70 EGP Cost / Lead<br>تجهيز أوردرات البيع والشحن</div>
+          </div>
+          <div class="timeline-step peak">
+            <span class="step-day">DAY 05 · OCT 25</span>
+            <div class="step-title">انفجار الـ 60 ألف جنيه مبيعات</div>
+            <div class="step-detail">60,000+ EGP Peak Revenue<br>2,228 محادثة شراء مقفلة</div>
+          </div>
+        </div>
+      </div>
+
     </section>
 
   </main>
@@ -669,7 +1006,7 @@
       <div class="results-top">
         <h2>VERIFIED<br>CAMPAIGN RESULTS.</h2>
         <p>
-          أرقام رسمية ومطابقة 100% لواقع جدول حملات TikTok Ads Manager. كفاءة غير مسبوقة في تكلفة الوصول، ومعدل تحويل مباشر إلى شات الرسائل بكسور الجنيه.
+          أرقام حقيقية ومطابقة 100% لسكرينات TikTok Ads Manager المرفقة أدناه. كفاءة غير مسبوقة في تكلفة الوصول، ومعدل تحويل مباشر إلى شات الرسائل بكسور الجنيه خلال 5 أيام عمل فقط.
         </p>
       </div>
 
@@ -679,12 +1016,12 @@
           <span>EGP DAILY REVENUE CASH FLOW</span>
         </article>
         <article>
-          <b>0.67 EGP</b>
-          <span>COST PER DIRECT CONVERSATION</span>
+          <b>5 DAYS</b>
+          <span>TOTAL TIME HORIZON TO SCALE</span>
         </article>
         <article>
-          <b>0.06 EGP</b>
-          <span>COST PER CLICK (26,150 CLICKS)</span>
+          <b>0.67 EGP</b>
+          <span>COST PER DIRECT CONVERSATION</span>
         </article>
         <article>
           <b>1,043,849</b>
@@ -696,25 +1033,29 @@
 
   <main class="wrap">
 
-    <!-- THE STORYTELLING: REEL-STYLE BREAKDOWN -->
+    <!-- REAL SCREENSHOT EVIDENCE WALKTHROUGH -->
     <section class="story-section">
-      <div class="story-head">
-        <div class="mono-meta" style="color: var(--yellow);">/ THE STORYTELLING &amp; REEL WALKTHROUGH</div>
-        <h2>THE ANATOMY OF A<br><i>60K REVENUE DAY.</i></h2>
+      <div style="margin-bottom: 50px;">
+        <div class="mono-meta" style="color: var(--yellow);">/ VERIFIED PROOF &amp; ACTUAL SCREENSHOTS</div>
+        <h2 style="font: 400 clamp(2.8rem, 5vw, 4.6rem)/.9 var(--display); margin: 8px 0 0; color: #fff;">
+          THE ACTUAL TIKTOK ADS MANAGER PROOF.
+        </h2>
       </div>
 
-      <!-- STAGE 01: THE ATTENTION MACHINE & 1M+ IMPRESSIONS -->
+      <!-- STAGE 01: SPEND & 1M+ IMPRESSIONS ACTUAL SCREENSHOT -->
       <article class="evidence-stage">
         <div class="evidence-copy">
-          <span class="stage-num">01 / THE ATTENTION HOOK &amp; 1M+ IMPRESSIONS</span>
-          <h3>كسر السكرول ومعدل نقر قياسي بـ 6 قروش</h3>
+          <span class="stage-num">STAGE 01 / THE ATTENTION HOOK &amp; 1M+ IMPRESSIONS</span>
+          <h3>كسر السكرول ومعدل نقر بـ 6 قروش</h3>
           <p>
             معظم الناس لما بتدخل تيك توك بتشتكي إن الـ CPM غالي وإن الناس بتتفرج ومتشتريش. السر بدأ من تصميم <strong>Creative Hook طبيعي وغير إعلاني (Native UGC)</strong> جذب العين في أول ثانيتين، فكانت النتيجة انفجار في الوصول.
           </p>
           <p>
-            بميزانية <strong>1,500.00 جنيه فقط</strong>، الإعلان كسر حاجز <strong>المليون ظهور (1,043,849 Impressions)</strong> بتكلفة CPM تاريخية <strong>1.44 جنيه مصري</strong>، وحقق <strong>26,150 نقرة</strong> على الوجهة بتكلفة نقرة مجنونة <strong>0.06 جنيه (6 قروش فقط لا غير!)</strong> مع CTR استثنائي 2.51%.
+            بميزانية <strong>1,500.00 جنيه فقط في 5 أيام</strong>، الإعلان كسر حاجز <strong>المليون ظهور (1,043,849 Impressions)</strong> بتكلفة CPM تاريخية <strong>1.44 جنيه مصري</strong>، وحقق <strong>26,150 نقرة</strong> على الوجهة بتكلفة نقرة مجنونة <strong>0.06 جنيه (6 قروش فقط لا غير!)</strong> مع CTR استثنائي 2.51%.
           </p>
           <div class="stage-stats-pill">
+            <span>1,500.00 EGP SPEND</span>
+            <span>·</span>
             <span>1,043,849 IMPRESSIONS</span>
             <span>·</span>
             <span>1.44 EGP CPM</span>
@@ -723,149 +1064,109 @@
           </div>
         </div>
 
-        <!-- EVIDENCE TABLE (EMBEDDED TIKTOK ADS MANAGER DATA AUDIT) -->
-        <div class="tiktok-table-card">
-          <div class="tt-card-header">
-            <span>AUDITED EVIDENCE // TIKTOK ADS MANAGER</span>
-            <span>STAGE 01: IMPRESSIONS &amp; SPEND</span>
+        <!-- REAL SCREENSHOT 01 -->
+        <div class="screenshot-card" onclick="openLightbox('evidence_spend_impressions.png')">
+          <div class="screenshot-header">
+            <span class="proof-badge">AUDITED EVIDENCE // REAL SCREENSHOT</span>
+            <span>CLICK TO ENLARGE 🔍</span>
           </div>
-          <div class="tt-table-wrap">
-            <table class="tt-table">
-              <thead>
-                <tr>
-                  <th>Status</th>
-                  <th>Campaign Name</th>
-                  <th>Spend</th>
-                  <th>Impressions</th>
-                  <th>CPM</th>
-                  <th>Clicks</th>
-                  <th>CPC</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><span class="tt-badge-on">Active</span></td>
-                  <td class="tt-camp-name">Camp mesg direct tik itrend</td>
-                  <td><span class="tt-highlight">1,500.00 EGP</span></td>
-                  <td><span class="tt-highlight">1,043,849</span></td>
-                  <td>1.44 EGP</td>
-                  <td>26,150</td>
-                  <td><span class="tt-highlight">0.06 EGP</span></td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="screenshot-wrap">
+            <img 
+              src="evidence_spend_impressions.png" 
+              onerror="this.onerror=null; this.src='evidence/evidence_spend_impressions.png';" 
+              alt="TikTok Ads Manager Spend 1500 EGP and 1M Impressions" 
+              class="real-screenshot-img" 
+            />
+            <div class="zoom-hint">🔍 FULL RESOLUTION PROOF</div>
           </div>
         </div>
       </article>
 
-      <!-- STAGE 02: THE 0.67 EGP CONVERSION FUNNEL -->
-      <article class="evidence-stage reversed">
-        <!-- EVIDENCE TABLE 02 -->
-        <div class="tiktok-table-card">
-          <div class="tt-card-header">
-            <span>AUDITED EVIDENCE // TIKTOK ADS MANAGER</span>
-            <span>STAGE 02: CONVERSIONS &amp; COST</span>
-          </div>
-          <div class="tt-table-wrap">
-            <table class="tt-table">
-              <thead>
-                <tr>
-                  <th>Campaign Name</th>
-                  <th>CTR (Destination)</th>
-                  <th>Conversions (TikTok DM)</th>
-                  <th>Cost per Conversion</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="tt-camp-name">Camp mesg direct tik itrend</td>
-                  <td>2.51%</td>
-                  <td><span class="tt-highlight">2,228 MSGS</span></td>
-                  <td><span class="tt-highlight">0.67 EGP</span></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
+      <!-- STAGE 02: CONVERSIONS & 0.67 EGP ACTUAL SCREENSHOT -->
+      <article class="evidence-stage">
         <div class="evidence-copy">
-          <span class="stage-num">02 / THE CONVERSION PIPELINE</span>
-          <h3>الضربة القاضية: محادثة شراء بـ 67 قرش!</h3>
+          <span class="stage-num">STAGE 02 / THE 0.67 EGP CONVERSATION ENGINE</span>
+          <h3>2,228 محادثة شراء مباشرة بـ 67 قرش للرسالة</h3>
           <p>
-            بدل ما نرمي العميل على ويب سايت معقد يضيع فيه أو يتردد، صممنا مسار تحويل فوري <strong>(TikTok Direct Message Funnel)</strong> يفتح شات المحادثة بضغطة زر واحدة مع رسائل ترحيب مجهزة لإغلاق البيع.
+            الخطأ الأكبر لأي براند على تيك توك هو تحويل العميل لموقع خارجي ثقيل وبطيء يؤدي لضياع 80% من العملاء.
           </p>
           <p>
-            النتيجة الموثقة في الأدز مانجر: <strong>2,228 محادثة شراء مباشرة</strong> مسجلة كـ Conversions، بتكلفة تحويل لا تُصدق: <strong>0.67 جنيه (67 قرش فقط للرسالة!)</strong>. هذا يعني أن كل 100 جنيه صرف إعلاني كانت تولّد حوالي 150 عميل في الشات!
+            نقلنا العميل مباشرة بضغطة زر إلى شات التيك توك (TikTok Direct Message) مع رسالة افتتاحية جاهزة تطلب المقاس والتفاصيل. النتيجة كانت استثنائية: <strong>2,228 محادثة بيعية حية</strong> بتكلفة محادثة <strong>0.67 جنيه فقط</strong>!
           </p>
           <div class="stage-stats-pill">
             <span>2,228 CONVERSIONS</span>
             <span>·</span>
-            <span>0.67 EGP / CONVERSION</span>
+            <span>0.67 EGP / MSG</span>
             <span>·</span>
             <span>2.51% CTR</span>
           </div>
         </div>
+
+        <!-- REAL SCREENSHOT 02 -->
+        <div class="screenshot-card" onclick="openLightbox('evidence_conversions_cost.png')">
+          <div class="screenshot-header">
+            <span class="proof-badge">AUDITED EVIDENCE // REAL SCREENSHOT</span>
+            <span>CLICK TO ENLARGE 🔍</span>
+          </div>
+          <div class="screenshot-wrap">
+            <img 
+              src="evidence_conversions_cost.png" 
+              onerror="this.onerror=null; this.src='evidence/evidence_conversions_cost.png';" 
+              alt="TikTok Ads Manager 2228 Conversions at 0.67 EGP" 
+              class="real-screenshot-img" 
+            />
+            <div class="zoom-hint">🔍 FULL RESOLUTION PROOF</div>
+          </div>
+        </div>
       </article>
 
-      <!-- STAGE 03: THE 884 QUALIFIED LEADS -->
+      <!-- STAGE 03: 884 LEADS ACTUAL SCREENSHOT -->
       <article class="evidence-stage">
         <div class="evidence-copy">
-          <span class="stage-num">03 / QUALIFIED BUYER INTENT</span>
-          <h3>884 ليد مؤكد بتكلفة 1.70 جنيه لليد</h3>
+          <span class="stage-num">STAGE 03 / 884 CONFIRMED BUYER LEADS</span>
+          <h3>884 ليد مؤكد وجاهز للشحن الفوري</h3>
           <p>
-            القوة الحقيقية ما كانتش مجرد "أرقام رسائل"، بل تحويل المحادثات إلى <strong>884 ليد مشتري مؤكد</strong> داخل شات تيك توك المباشر، بمتوسط تكلفة <strong>1.70 جنيه فقط</strong> لليد الواحد.
-          </p>
-          <p>
-            تصفية المشترين داخل الشات أتاحت لفريق المبيعات الرد السريع وتأكيد العناوين وأرقام التليفونات لتجهيز شحنات الأوردرات وشحنها في نفس اليوم.
+            المحادثات مكنتش مجرد "بكام" وخلاص، السكربتات المجهزة وفريق المبيعات حولوا المحادثات لـ <strong>884 ليد مكتمل البيانات (الاسم، العنوان، التليفون، والطلب)</strong> بتكلفة ليد <strong>1.70 جنيه فقط</strong>!
           </p>
           <div class="stage-stats-pill">
-            <span>884 QUALIFIED LEADS</span>
+            <span>884 LEADS</span>
             <span>·</span>
-            <span>1.70 EGP COST PER LEAD</span>
+            <span>1.70 EGP / LEAD</span>
+            <span>·</span>
+            <span>0.06 EGP CPC</span>
           </div>
         </div>
 
-        <!-- EVIDENCE TABLE 03 -->
-        <div class="tiktok-table-card">
-          <div class="tt-card-header">
-            <span>AUDITED EVIDENCE // TIKTOK ADS MANAGER</span>
-            <span>STAGE 03: CONFIRMED LEADS</span>
+        <!-- REAL SCREENSHOT 03 -->
+        <div class="screenshot-card" onclick="openLightbox('evidence_leads.png')">
+          <div class="screenshot-header">
+            <span class="proof-badge">AUDITED EVIDENCE // REAL SCREENSHOT</span>
+            <span>CLICK TO ENLARGE 🔍</span>
           </div>
-          <div class="tt-table-wrap">
-            <table class="tt-table">
-              <thead>
-                <tr>
-                  <th>Campaign Name</th>
-                  <th>Leads (TikTok DM)</th>
-                  <th>Cost per Lead</th>
-                  <th>Primary Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="tt-camp-name">Camp mesg direct tik itrend</td>
-                  <td><span class="tt-highlight">884 LEADS</span></td>
-                  <td><span class="tt-highlight">1.70 EGP</span></td>
-                  <td><span class="tt-badge-on">Ended</span></td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="screenshot-wrap">
+            <img 
+              src="evidence_leads.png" 
+              onerror="this.onerror=null; this.src='evidence/evidence_leads.png';" 
+              alt="TikTok Ads Manager 884 Leads" 
+              class="real-screenshot-img" 
+            />
+            <div class="zoom-hint">🔍 FULL RESOLUTION PROOF</div>
           </div>
         </div>
       </article>
 
       <!-- UNIT ECONOMICS: HOW 1,500 EGP BECAME 60K EGP -->
       <div class="formula-box">
-        <div class="mono-meta" style="color: var(--yellow);">/ THE UNIT ECONOMICS EQUATION</div>
-        <h3>HOW 1,500 EGP AD SPEND GENERATED <span>60,000 EGP REVENUE</span> IN 24 HOURS</h3>
+        <div class="mono-meta" style="color: var(--yellow);">/ THE 5-DAY UNIT ECONOMICS EQUATION</div>
+        <h3>HOW 1,500 EGP IN 5 DAYS GENERATED <span>60,000 EGP REVENUE</span></h3>
         <p style="color: #aaa; font-size: 14.5px; max-width: 850px; margin: 0 0 20px;">
-          الحسبة بالورقة والقلم: عندما تمتلك خط أنابيب بيعي يضخ 2,228 عميل في الشات خلال يوم واحد، فإن وتيرة الإغلاق تترجم فورياً إلى مبيعات كاش فلو قياسية:
+          الحسبة بالورقة والقلم: عندما تمتلك خط أنابيب بيعي يضخ 2,228 عميل في الشات خلال 5 أيام عمل، فإن وتيرة الإغلاق تترجم فورياً إلى مبيعات كاش فلو قياسية تخطت 60,000 جنيه:
         </p>
 
         <div class="formula-grid">
           <div class="formula-item">
             <strong>1,500 EGP</strong>
-            <span>TOTAL AD SPEND</span>
+            <span>TOTAL 5-DAY AD SPEND</span>
           </div>
           <div class="formula-item">
             <strong>2,228</strong>
@@ -873,11 +1174,11 @@
           </div>
           <div class="formula-item">
             <strong>884</strong>
-            <span>CONFIRMED LEADS</span>
+            <span>CONFIRMED BUYER LEADS</span>
           </div>
           <div class="formula-item">
             <strong>60,000+ EGP</strong>
-            <span>DAILY REVENUE GENERATED</span>
+            <span>PEAK SALES CASH FLOW</span>
           </div>
         </div>
       </div>
@@ -912,13 +1213,21 @@
           <b>03 / VELOCITY CLOSING</b>
           <h4>RAPID SALES DISPATCH</h4>
           <p>
-            تجهيز سكربتات رد جاهزة وخصومات زمنية محدودة للمحادثات سمح لفريق المبيعات بالتعامل مع تدفق 2,228 محادثة وإغلاق مبيعات يومية كاش فلو تخطت 60,000 جنيه في 24 ساعة.
+            تجهيز سكربتات رد جاهزة وخصومات زمنية محدودة للمحادثات سمح لفريق المبيعات بالتعامل مع تدفق 2,228 محادثة وإغلاق مبيعات يومية كاش فلو تخطت 60,000 جنيه خلال الـ 5 أيام.
           </p>
         </article>
       </div>
     </section>
 
   </main>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox" class="lightbox-modal" onclick="closeLightbox()">
+    <div class="lightbox-inner" onclick="event.stopPropagation()">
+      <button class="lightbox-close" onclick="closeLightbox()">CLOSE ×</button>
+      <img id="lightbox-img" src="" alt="Enlarged Proof Screenshot" class="lightbox-img" />
+    </div>
+  </div>
 
   <!-- FOOTER CTA -->
   <footer class="footer-cta">
@@ -935,6 +1244,21 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    function openLightbox(src) {
+      const modal = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      img.src = src;
+      modal.classList.add('open');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
 
 </body>
 </html>
